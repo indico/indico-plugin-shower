@@ -1,0 +1,3 @@
+graft indico_burotel/static
+
+global-exclude *.pyc __pycache__ .keep

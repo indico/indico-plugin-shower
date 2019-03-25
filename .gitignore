@@ -1,0 +1,4 @@
+dist
+webpack-build-config.json
+*.pyc
+*.egg-info
