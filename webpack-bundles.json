@@ -1,6 +1,6 @@
 {
     "entry": {
-        "showers": "./js/index.js"
+        "showers": "./js/index.jsx"
     },
     "sassOverrides": {
         "rb_new:styles/palette": "./styles/palette.scss",
