@@ -9,3 +9,8 @@
 @import '~rb_new:styles/palette';
 
 $highlight-color: #afcfee;
+$dark-highlight-color: #4774B0;
+
+%rb-splash-background {
+    background-image: url('showers:images/splash.jpg');
+}
