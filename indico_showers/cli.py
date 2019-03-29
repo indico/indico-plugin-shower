@@ -101,7 +101,7 @@ def populate_db():
         # random number of showers, since we don't have time
         # to figure out what it really is
         num_showers = random.choice([2, 4])
-        file_name = './photos/{}.jpg'.format(name.replace('/', '_'))
+        file_name = './photos/{}.png'.format(name.replace('/', '_'))
         photo_data = None
 
         # Check if there's a photo in './photos/xxxx' and use it
