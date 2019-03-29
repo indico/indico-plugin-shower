@@ -107,7 +107,7 @@ def populate_db():
         building, floor, number = ROOM_RE.match(name).groups()
         # random number of showers, since we don't have time
         # to figure out what it really is
-        num_showers = random.choice([2, 4])
+        num_showers = random.choice([2, 3, 4])
         file_name = './photos/{}.png'.format(name.replace('/', '_'))
         photo_data = None
 
@@ -120,7 +120,7 @@ def populate_db():
 
         for num_shower in range(num_showers):
             room = Room(building=building, floor=floor, number=number, verbose_name="Shower {}".format(num_shower + 1),
-                        location=location, division='CERN', owner=owner)
+                        location=location, division='CERN', owner=owner, capacity=1)
             if photo_data:
                 room.photo = Photo(data=photo_data)
             if building in GEO_INFO:
