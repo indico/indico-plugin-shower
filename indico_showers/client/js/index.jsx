@@ -12,11 +12,13 @@ import DefaultBookRoom from 'indico/modules/rb_new/modules/bookRoom/BookRoom';
 import DefaultBookRoomModal from 'indico/modules/rb_new/modules/bookRoom/BookRoomModal';
 import DefaultLandingStatistics from 'indico/modules/rb_new/modules/landing/LandingStatistics';
 import DefaultMenu from 'indico/modules/rb_new/components/Menu';
+import DefaultRoomBookingMap from 'indico/modules/rb_new/common/map/RoomBookingMap';
 import DefaultRoomDetailsModal from 'indico/modules/rb_new/common/rooms/RoomDetailsModal';
 
 import {Translate} from 'indico/react/i18n';
 import {parametrize} from 'indico/react/util';
 
+import MapMarkers from './components/MapMarkers';
 import SplitRenderer from './components/SplitRenderer';
 
 
@@ -60,6 +62,10 @@ const BookRoomModal = parametrize(DefaultBookRoomModal, () => ({
     reasonRequired: false,
 }));
 
+const RoomBookingMap = parametrize(DefaultRoomBookingMap, {
+    markerComponent: MapMarkers
+});
+
 const parametrized = {
     App,
     Menu,
@@ -67,7 +73,11 @@ const parametrized = {
     LandingStatistics,
     RoomDetailsModal,
     BookRoomModal,
+    RoomBookingMap
+};
+
+const overrides = {
     RoomRenderer: SplitRenderer
 };
 
-setup({...parametrized});
+setup({...parametrized, ...overrides});
