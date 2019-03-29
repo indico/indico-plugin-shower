@@ -111,8 +111,8 @@ def populate_db():
         else:
             print cformat("%{yellow}!%{reset} Photo for {} not found!").format(name)
 
-        for number in range(num_showers):
-            room = Room(building=building, floor=floor, number=number, verbose_name="Shower {}".format(num_showers),
+        for num_shower in range(num_showers):
+            room = Room(building=building, floor=floor, number=number, verbose_name="Shower {}".format(num_shower + 1),
                         location=location, division='CERN', owner=owner)
             if photo_data:
                 room.photo = Photo(data=photo_data)
