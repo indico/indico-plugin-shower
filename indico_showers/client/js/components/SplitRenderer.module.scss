@@ -1,0 +1,39 @@
+/* This file is part of the CERN Indico plugins.
+ * Copyright (C) 2014 - 2019 CERN
+ *
+ * The CERN Indico plugins are free software; you can redistribute
+ * them and/or modify them under the terms of the MIT License; see
+ * the LICENSE file for more details.
+ */
+
+@import 'base/palette';
+
+.building {
+    margin-bottom: 3em;
+    border-left: 2px solid $pastel-gray;
+    padding-left: 1em;
+
+    > h2 {
+        color: $dark-gray;
+    }
+
+    .building-container {
+        margin: 0;
+    }
+}
+
+.room {
+    margin-bottom: 1.5em;
+
+    > h3 {
+        color: $black;
+    }
+
+    .room-container:global(.ui.cards) {
+        margin: 0 0 0 10px;
+    }
+
+    .extra-content {
+        display: flex;
+    }
+ }

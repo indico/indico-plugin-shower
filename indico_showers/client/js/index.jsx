@@ -17,6 +17,8 @@ import DefaultRoomDetailsModal from 'indico/modules/rb_new/common/rooms/RoomDeta
 import {Translate} from 'indico/react/i18n';
 import {parametrize} from 'indico/react/util';
 
+import SplitRenderer from './components/SplitRenderer';
+
 
 const App = parametrize(DefaultApp, {
     title: Translate.string('Showers'),
@@ -64,7 +66,8 @@ const parametrized = {
     BookRoom,
     LandingStatistics,
     RoomDetailsModal,
-    BookRoomModal
+    BookRoomModal,
+    RoomRenderer: SplitRenderer
 };
 
 setup({...parametrized});
