@@ -6,8 +6,11 @@
  * file for more details.
  */
 
+import moment from 'moment';
+
 import setup from 'indico/modules/rb_new/setup';
 import DefaultApp from 'indico/modules/rb_new/components/App';
+import DefaultBookingBootstrapForm from 'indico/modules/rb_new/components/BookingBootstrapForm';
 import DefaultBookRoom from 'indico/modules/rb_new/modules/bookRoom/BookRoom';
 import DefaultBookRoomModal from 'indico/modules/rb_new/modules/bookRoom/BookRoomModal';
 import DefaultLandingStatistics from 'indico/modules/rb_new/modules/landing/LandingStatistics';
@@ -26,6 +29,15 @@ const App = parametrize(DefaultApp, {
     title: Translate.string('Showers'),
     iconName: 'shower'
 });
+
+const BookingBootstrapForm = parametrize(DefaultBookingBootstrapForm, () => ({
+    defaults: {
+        timeSlot: {
+            startTime: moment().startOf('hour').add(1, 'h'),
+            endTime: moment().startOf('hour').add(1, 'h').add(15, 'm')
+        }
+    }
+}));
 
 const Menu = parametrize(DefaultMenu, () => ({
     labels: {
@@ -68,6 +80,7 @@ const RoomBookingMap = parametrize(DefaultRoomBookingMap, {
 
 const parametrized = {
     App,
+    BookingBootstrapForm,
     Menu,
     BookRoom,
     LandingStatistics,
