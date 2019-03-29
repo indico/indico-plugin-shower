@@ -9,12 +9,14 @@ from __future__ import unicode_literals
 
 from flask import current_app, redirect, request, url_for
 
+from indico.core import signals
 from indico.core.plugins import IndicoPlugin
 from indico.modules.rb.controllers import RHRoomBookingBase
 from indico.web.flask.util import make_view_func
 from indico.web.views import WPNewBase
 
 from indico_showers import _
+from indico_showers.cli import cli
 
 
 class WPShowersBase(WPNewBase):
@@ -43,6 +45,7 @@ class ShowersPlugin(IndicoPlugin):
         self.inject_bundle('semantic-ui.css', WPShowersBase)
         self.inject_bundle('showers.js', WPShowersBase)
         self.inject_bundle('showers.css', WPShowersBase)
+        self.connect(signals.plugin.cli, self._extend_indico_cli)
 
     def _before_request(self):
         if request.endpoint == 'categories.display':
@@ -50,3 +53,6 @@ class ShowersPlugin(IndicoPlugin):
         elif request.endpoint == 'rooms_new.roombooking':
             # render our own landing page instead of the original RH
             return make_view_func(RHLanding)()
+
+    def _extend_indico_cli(self, sender, **kwargs):
+        return cli
