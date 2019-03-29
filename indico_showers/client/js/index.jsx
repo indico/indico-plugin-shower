@@ -1,9 +1,9 @@
-/* This file is part of the CERN Indico plugins.
- * Copyright (C) 2014 - 2019 CERN
+/* This file is part of the Indico April Fools 2019 Plugin.
+ * Copyright (C) 2019 CERN
  *
- * The CERN Indico plugins are free software; you can redistribute
- * them and/or modify them under the terms of the MIT License; see
- * the LICENSE file for more details.
+ * This plugin is free software; you can redistribute it and/or
+ * modify it under the terms of the MIT License; see the LICENSE
+ * file for more details.
  */
 
 import setup from 'indico/modules/rb_new/setup';
